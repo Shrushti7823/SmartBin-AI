@@ -1,0 +1,182 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fff8f2;
+  color: #333;
+  line-height: 1.6;
+  padding: 0 20px;
+}
+
+/* Header Styling */
+header {
+  background-color: #e7a74e;
+  color: white;
+  padding: 10px 0;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header .logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Section Styling */
+main {
+  max-width: 1200px;
+  margin: 20px auto;
+}
+
+.hero {
+  background-color: #fff1de;
+  padding: 30px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.hero h1 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.input-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.input-section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* Two-Column Input Container */
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.column {
+  flex: 1;
+}
+
+label {
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+  text-align: left;
+  margin: 10px 0 5px;
+}
+
+input {
+  padding: 12px;
+  width: calc(100% - 24px);
+  margin-bottom: 15px;
+  font-size: 16px;
+  border: 2px solid #f2c88a;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #e7a74e;
+  outline: none;
+}
+
+/* Submit Button */
+button {
+  width: 100%;
+  padding: 12px 0;
+  background-color: #e7a74e;
+  border: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #d8912d;
+  transform: scale(1.05);
+}
+
+/* Output Section Styling */
+.output-section {
+  background-color: #fffdfb;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.output-section h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+#output p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#output span {
+  font-weight: bold;
+  color: #d8912d;
+}
+
+/* Footer Styling */
+footer {
+  background-color: #e7a74e;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+footer p {
+  font-size: 14px;
+}

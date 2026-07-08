@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Waste Classification</title>
+    <style>
+      /* General Styles */
+      :root {
+        --primary-color: #cc952e;
+        --secondary-color: #3498db;
+        --text-color: #333;
+        --bg-color: #ecf0f1;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Roboto", sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.4; /* Reduced line height */
+      }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 10px; /* Reduced padding */
+      }
+
+      /* Navbar */
+      .navbar {
+        background-color: var(--primary-color);
+        padding: 10px 0; /* Reduced padding */
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      .navbar .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 20px; /* Reduced font size */
+        font-weight: bold;
+        color: white;
+      }
+      .nav-links {
+        display: flex;
+        gap: 15px; /* Reduced gap */
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+      .nav-links a:hover {
+        color: var(--bg-color);
+        transform: translateY(-2px);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary-color),
+          var(--secondary-color)
+        );
+        color: white;
+        text-align: center;
+        padding: 60px 0 30px; /* Reduced padding */
+        margin-bottom: 30px; /* Reduced margin */
+      }
+      .hero h1 {
+        font-size: 2.5em; /* Reduced font size */
+        margin-bottom: 15px; /* Reduced margin */
+        animation: fadeInDown 1s ease;
+      }
+      .hero p {
+        font-size: 1.1em; /* Reduced font size */
+        max-width: 600px;
+        margin: 0 auto;
+        animation: fadeInUp 1s ease;
+      }
+
+      /* Form Section */
+      .form-container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        padding: 20px; /* Reduced padding */
+        margin-bottom: 30px; /* Reduced margin */
+      }
+      form {
+        display: grid;
+        grid-template-columns: repeat(
+          4,
+          1fr
+        ); /* Four input fields in one row */
+        gap: 15px; /* Reduced gap */
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+      }
+      label {
+        margin-bottom: 5px;
+        color: var(--primary-color);
+        font-weight: bold;
+      }
+      input[type="number"] {
+        width: 100%;
+        padding: 8px; /* Reduced padding */
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 14px; /* Reduced font size */
+        transition: border-color 0.3s ease;
+      }
+      input[type="number"]:focus {
+        border-color: var(--primary-color);
+        outline: none;
+      }
+      input[type="submit"] {
+        grid-column: 1 / -1; /* Submit button takes full width */
+        background-color: var(--secondary-color);
+        color: white;
+        border: none;
+        padding: 10px 15px; /* Reduced padding */
+        font-size: 16px; /* Reduced font size */
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, transform 0.2s ease;
+      }
+      input[type="submit"]:hover {
+        background-color: #2980b9;
+        transform: scale(1.05);
+      }
+
+      /* Output Section */
+      .output {
+        background-color: white;
+        padding: 15px; /* Reduced padding */
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 30px; /* Reduced margin */
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 1s ease forwards;
+      }
+      .output h2,
+      .output h3 {
+        margin-bottom: 10px;
+        color: var(--primary-color);
+      }
+
+      /* Footer */
+      footer {
+        background-color: var(--text-color);
+        color: white;
+        text-align: center;
+        padding: 15px 0; /* Reduced padding */
+      }
+
+      /* Animations */
+      @keyframes fadeInDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* Responsiveness */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 1.8em; /* Adjust for smaller screens */
+        }
+        .hero p {
+          font-size: 0.9em; /* Adjust for smaller screens */
+        }
+        .nav-links {
+          display: none; /* Hide links on small screens */
+        }
+        form {
+          grid-template-columns: 1fr; /* Stack inputs vertically on small screens */
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="container">
+        <div class="logo">🌿SmartBin AI</div>
+        <div class="nav-links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#how-it-works">How It Works</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <h1>AI Waste Classification</h1>
+        <p>Transforming waste management through intelligent AI-powered classification and sustainable recycling solutions.</p>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="form-container">
+        <h1>Waste Classification Prediction</h1>
+        <form method="post">
+          <div class="form-group">
+            <label for="moisture">Moisture:</label>
+            <input
+              type="number"
+              step="any"
+              name="moisture"
+              id="moisture"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="infrared">Infrared:</label>
+            <input
+              type="number"
+              step="any"
+              name="infrared"
+              id="infrared"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="capacitive">Capacitive:</label>
+            <input
+              type="number"
+              step="any"
+              name="capacitive"
+              id="capacitive"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="ultrasonic">Ultrasonic:</label>
+            <input
+              type="number"
+              step="any"
+              name="ultrasonic"
+              id="ultrasonic"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="temperature">Temperature:</label>
+            <input
+              type="number"
+              step="any"
+              name="temperature"
+              id="temperature"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="optical">Optical:</label>
+            <input
+              type="number"
+              step="any"
+              name="optical"
+              id="optical"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="conductivity">Conductivity:</label>
+            <input
+              type="number"
+              step="any"
+              name="conductivity"
+              id="conductivity"
+              required />
+          </div>
+
+          <div class="form-group">
+            <label for="weight">Weight:</label>
+            <input
+              type="number"
+              step="any"
+              name="weight"
+              id="weight"
+              required />
+          </div>
+
+          <input type="submit" value="Predict" />
+        </form>
+      </div>
+
+      {% if prediction %}
+      <div class="output">
+        <h2>Predicted Waste Type: {{ prediction }}</h2>
+        <h3>Confidence: {{ confidence }}%</h3>
+      </div>
+      {% endif %}
+    </div>
+  </body>
+</html>
