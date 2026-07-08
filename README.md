@@ -1,49 +1,165 @@
-# AI Waste Detection System
+# ♻️ SmartBin AI – AI-Powered Waste Classification System
 
-## Description
+**SmartBin AI** is an AI-powered web application developed using **Python (Flask)** and **Machine Learning** to classify waste into categories such as **Dry**, **Wet**, and **Plastic** based on sensor readings.
 
-It is an online machine learning-based platform which accepts values of sensors and then predicts the waste type as dry, wet, or plastic.
+The system analyzes data collected from multiple sensors and predicts the waste type with a confidence score, helping improve waste segregation and support sustainable waste management.
 
-## Screenshot
-
-![Screenshot of the application](Screenshot%201.png)
+---
 
 ## Features
 
-- Accepts sensor values (Moisture, Infrared, Capacitive, Ultrasonic, Temperature, Optical, Conductivity, Weight)
-- Predicts waste type: dry, wet, or plastic
-- Displays prediction confidence
-- User-friendly web interface
+* 🤖 AI-based Waste Classification
+* 📊 Machine Learning Prediction Model
+* 📈 Prediction Confidence Score
+* 🌡️ Sensor-Based Waste Detection
+* 💻 Responsive Web Interface
+* ⚡ Fast and Accurate Predictions
+* 🌱 Supports Smart Waste Management
 
-## Folder Structure
+---
+
+##  Input Parameters
+
+The model accepts the following sensor values:
+
+* Moisture
+* Infrared
+* Capacitive
+* Ultrasonic
+* Temperature
+* Optical
+* Conductivity
+* Weight
+
+---
+
+## Output
+
+The system predicts one of the following waste categories:
+
+* 🟢 Wet Waste
+* 🔵 Dry Waste
+* 🟡 Plastic Waste
+
+Along with:
+
+* Prediction Confidence (%)
+
+---
+
+## Tech Stack
+
+### Frontend
+
+* HTML5
+* CSS3
+* JavaScript
+
+### Backend
+
+* Python
+* Flask
+
+### Machine Learning
+
+* Scikit-learn
+* Pandas
+* NumPy
+
+### Dataset
+
+* CSV Dataset (`waste_classification_data.csv`)
+
+---
+
+## 📁 Project Structure
+
+```text
+SmartBin-AI/
+│
+├── app.py
+├── model.py
+├── waste_classification_data.csv
+├── README.md
+├── Screenshot1.png
+│
+├── static/
+│   ├── style.css
+│   └── script.js
+│
+└── templates/
+    └── index.html
+```
+
+---
+
+## ⚙️ Installation
+
+### Clone the Repository
+
+```bash
+git clone https://github.com/Shrushti7823/SmartBin-AI.git
+```
+
+### Move into the Project Folder
+
+```bash
+cd SmartBin-AI
+```
+
+### Install Required Packages
+
+```bash
+pip install flask pandas numpy scikit-learn
+```
+
+### Run the Application
+
+```bash
+python app.py
+```
+
+Open your browser and visit:
 
 ```
-PBL TY AI Waste Detection/
-  ├── app.py
-  ├── model.py
-  ├── README.md
-  ├── Screenshot 1.png
-  ├── static/
-  │   ├── script.js
-  │   └── style.css
-  ├── templates/
-  │   └── index.html
-  └── waste_classification_data.csv
+http://127.0.0.1:5000
 ```
 
-## How to Run the Project
+---
 
-1. Make sure you have Python installed.
-2. In the root directory, run:
-   ```bash
-   python app.py
-   ```
-3. Open your browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000)
+## Project Screenshot
 
-## Contributing
+Add your application screenshot here.
 
-Contributions are welcome! Please fork the repository and submit a pull request for any improvements or bug fixes.
+Example:
 
-## Conclusion
+```
+Screenshot.png
+```
 
-This project demonstrates the use of machine learning for smart waste classification, helping to revolutionize waste management with AI technology.
+---
+
+## 🎯 Future Enhancements
+
+* Image-Based Waste Detection
+* MongoDB Database Integration
+* User Authentication
+* Prediction History
+* Analytics Dashboard
+* Recycling Recommendations
+* Admin Panel
+* Dark Mode
+* Waste Statistics
+* Mobile Responsive UI
+
+---
+
+## 📄 License
+
+This project is developed for educational and academic purposes.
+
+---
+
+## Developer
+**Shrushti R. Handge**
+
